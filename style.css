@@ -1,0 +1,300 @@
+/* ─── Reset & Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --text:        #1d1d1f;
+  --text-muted:  #6e6e73;
+  --planned:     #aeaeb2;
+  --accent:      #0066cc;
+  --border:      #d2d2d7;
+  --bg:          #ffffff;
+  --page-width:  720px;
+  --section-gap: 2.5rem;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-feature-settings: 'cv05', 'cv09', 'ss01';
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Page Container ─────────────────────────────────────────────── */
+.page {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────── */
+.cv-header {
+  margin-bottom: var(--section-gap);
+  padding-bottom: var(--section-gap);
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.25rem;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.contact-line {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-line a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.contact-line a:hover { text-decoration: underline; }
+
+.sep {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+/* ─── Sections ───────────────────────────────────────────────────── */
+section {
+  margin-bottom: var(--section-gap);
+  padding-bottom: var(--section-gap);
+  border-bottom: 1px solid var(--border);
+}
+section:last-of-type { border-bottom: none; }
+
+section > h2 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+section > p {
+  font-size: 0.95rem;
+  color: var(--text);
+  max-width: 62ch;
+  line-height: 1.7;
+}
+
+/* ─── Entries ────────────────────────────────────────────────────── */
+.entry {
+  margin-bottom: 1.75rem;
+}
+.entry:last-child { margin-bottom: 0; }
+
+.entry-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.entry-title {
+  font-size: 0.975rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.entry-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.entry-title a:hover { color: var(--accent); }
+
+.entry-date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.entry-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.entry ul {
+  font-size: 0.9rem;
+  padding-left: 1.1rem;
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.entry ul li { line-height: 1.55; }
+
+/* ─── Planned entries ────────────────────────────────────────────── */
+.planned-entry .entry-title,
+.planned-entry .entry-date,
+.planned-entry .entry-subtitle,
+.planned-entry ul,
+.planned-entry li {
+  color: var(--planned);
+}
+
+.planned-inline {
+  color: var(--planned);
+}
+
+.planned-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--planned);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.05em 0.4em;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+/* ─── Skills Grid ────────────────────────────────────────────────── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 2.5rem;
+}
+
+.skill-group h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
+}
+
+.skill-group p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.skill-group--full {
+  grid-column: 1 / -1;
+}
+
+/* ─── Language sub-rows ──────────────────────────────────────────── */
+.lang-group {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.88rem;
+}
+.lang-group:last-child { margin-bottom: 0; }
+
+.lang-level {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 5.5rem;
+  flex-shrink: 0;
+}
+
+.lang-group span:last-child {
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────── */
+footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.print-btn {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.print-btn:hover {
+  border-color: var(--accent);
+  background: #f0f5ff;
+}
+
+/* ─── Print ──────────────────────────────────────────────────────── */
+@media print {
+  @page { margin: 1.5cm 2cm; }
+
+  body { font-size: 11pt; }
+
+  .page { padding: 0; max-width: 100%; }
+
+  .print-btn { display: none; }
+
+  footer { border-top: none; padding-top: 0; margin-top: 0.75rem; }
+
+  /* sections: collapse spacing, keep divider */
+  section { margin-bottom: 0; padding-bottom: 0.9rem; }
+
+  /* don't let a heading strand at the bottom of a page alone */
+  section > h2 { break-after: avoid; margin-bottom: 0.9rem; }
+
+  /* keep individual entries (job/school blocks) together — they're small enough */
+  .entry { break-inside: avoid; margin-bottom: 0.85rem; }
+  .entry:last-child { margin-bottom: 0; }
+
+  .entry-header { break-after: avoid; }
+
+  a { color: inherit; text-decoration: none; }
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .page { padding: 2.5rem 1.25rem 4rem; }
+
+  .cv-header h1 { font-size: 1.6rem; }
+
+  .entry-header { flex-direction: column; gap: 0.1rem; }
+
+  .entry-date { font-size: 0.82rem; }
+
+  .skills-grid { grid-template-columns: 1fr; }
+
+  .lang-level { min-width: 4.5rem; }
+}
