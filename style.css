@@ -30,6 +30,22 @@ body {
   padding: 4rem 2rem 5rem;
 }
 
+/* ─── Page Top Bar ───────────────────────────────────────────────── */
+.page-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.cv-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 /* ─── Header ─────────────────────────────────────────────────────── */
 .cv-header {
   margin-bottom: var(--section-gap);
@@ -240,6 +256,13 @@ footer span {
   color: var(--text-muted);
 }
 
+.footer-link {
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+.footer-link:hover { text-decoration: underline; }
+
 .print-btn {
   font-family: inherit;
   font-size: 0.8rem;
@@ -266,6 +289,7 @@ footer span {
   .page { padding: 0; max-width: 100%; }
 
   .print-btn { display: none; }
+  .page-top { display: none; }
 
   footer { border-top: none; padding-top: 0; margin-top: 0.75rem; }
 
